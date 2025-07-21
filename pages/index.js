@@ -131,23 +131,24 @@ export default function HomePage() {
 
       <main
         className="
-          bg-white p-6 sm:p-8 rounded-3xl shadow-2xl mx-auto
+          bg-white p-4 sm:p-8 rounded-3xl shadow-2xl mx-auto
           border border-blue-100 transform transition-transform duration-300 hover:scale-[1.01] relative z-10
-          max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl // MODIFIED: Added max-width classes
+          max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl
+          w-full // Ensures it takes full width on small screens up to max-width
         "
       >
         <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-blue-800 mb-4 font-['Montserrat'] tracking-tight drop-shadow-md">
           <span className="text-blue-500">✨</span> Age Calculator <span className="text-blue-500">✨</span>
         </h1>
 
-        <p className="mb-6 text-gray-700 text-base text-center">
+        <p className="mb-6 text-gray-700 text-base text-center text-sm sm:text-base px-2"> {/* Added px-2 here */}
           Welcome to our <strong>free online age calculator</strong>! Discover your exact age in years, months,
           and days with just a few clicks. This tool is perfect for calculating age for any purpose, from personal
           curiosity to official documentation. Simply select your date of birth below to get started. Our accurate
           and user-friendly calculator takes the guesswork out of determining age.
         </p>
 
-        <div className="mb-6">
+        <div className="mb-6 px-2"> {/* Added px-2 here */}
           <label htmlFor="dob" className="block text-gray-700 text-base font-medium mb-2">Select Your Date of
             Birth:</label>
           <input
@@ -202,13 +203,15 @@ export default function HomePage() {
 
         <hr className="my-8 border-gray-300" />
 
-        <div className="mt-8 text-gray-700 text-sm">
+        <div className="mt-8 text-gray-700 text-sm px-2"> {/* Added px-2 here */}
           <h2 className="font-bold text-lg mb-3 text-blue-800">How Our Age Calculator Works</h2>
-          <p className="mb-3">Our <strong>Age Calculator</strong> uses a straightforward yet precise method to
+          <p className="mb-3 text-sm sm:text-base">
+            Our <strong>Age Calculator</strong> uses a straightforward yet precise method to
             determine your age. When you input your birth date, the calculator instantly computes the duration
             from that specific date to the <strong>current date</strong> (July 21, 2025). It meticulously
-            accounts for:</p>
-          <ul className="list-disc pl-5 mb-3 space-y-1">
+            accounts for:
+          </p>
+          <ul className="list-disc pl-5 mb-3 space-y-1 text-sm sm:text-base">
             <li><strong>Leap Years:</strong> Ensuring that an extra day in February is correctly factored in
               every four years, preventing inaccuracies.</li>
             <li><strong>Varying Month Lengths:</strong> Whether a month has 30 or 31 days (or 28/29 in
@@ -216,17 +219,17 @@ export default function HomePage() {
             <li><strong>Exact Day Count:</strong> You get your age broken down into full years, months, and even
               the remaining days, providing a complete picture.</li>
           </ul>
-          <p>This process guarantees that you receive an <strong>accurate and reliable age calculation</strong>
+          <p className="text-sm sm:text-base">This process guarantees that you receive an <strong>accurate and reliable age calculation</strong>
             every time, making it dependable for both casual use and more formal requirements.</p>
         </div>
 
         <hr className="my-8 border-gray-300" />
 
-        <div className="mt-6 text-gray-700 text-sm">
+        <div className="mt-6 text-gray-700 text-sm px-2"> {/* Added px-2 here */}
           <h2 className="font-bold text-lg mb-3 text-blue-800">Why Calculate Your Exact Age?</h2>
-          <p className="mb-3">Knowing your precise age in years, months, and days can be more useful than you might
+          <p className="mb-3 text-sm sm:text-base">Knowing your precise age in years, months, and days can be more useful than you might
             think! Beyond just curiosity, an exact age calculation is vital for numerous situations:</p>
-          <ul className="list-disc pl-5 mb-3 space-y-1">
+          <ul className="list-disc pl-5 mb-3 space-y-1 text-sm sm:text-base">
             <li><strong>Official Documentation:</strong> Many legal forms, applications (e.g., for school, jobs,
               or government services), and insurance policies require your exact age on a specific date.</li>
             <li><strong>Retirement Planning:</strong> Calculating your age down to the day can help determine
@@ -241,45 +244,45 @@ export default function HomePage() {
             <li><strong>Legal Purposes:</strong> For contracts, wills, or other legal agreements, the exact age
               of individuals involved can be a critical detail.</li>
           </ul>
-          <p>Our age calculator simplifies these needs, providing you with <strong>quick and verified age
+          <p className="text-sm sm:text-base">Our age calculator simplifies these needs, providing you with <strong>quick and verified age
             details</strong> whenever you need them.</p>
         </div>
 
         <hr className="my-8 border-gray-300" />
 
-        <div className="mt-6 text-gray-700 text-sm">
+        <div className="mt-6 text-gray-700 text-sm px-2"> {/* Added px-2 here */}
           <h2 className="font-bold text-lg mb-3 text-blue-800">Frequently Asked Questions (FAQs)</h2>
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-base text-blue-700 mb-1">Q: Is this age calculator free to use?
               </h3>
-              <p>A: Yes, absolutely! Our age calculator is completely free to use, and there are no hidden
+              <p className="text-sm sm:text-base">A: Yes, absolutely! Our age calculator is completely free to use, and there are no hidden
                 charges or subscriptions required. You can use it as many times as you need.</p>
             </div>
             <div>
               <h3 className="font-semibold text-base text-blue-700 mb-1">Q: Do you store my date of birth
                 information?</h3>
-              <p>A: No, we do not store any personal information, including your date of birth. All age
+              <p className="text-sm sm:text-base">A: No, we do not store any personal information, including your date of birth. All age
                 calculations are performed client-side, directly in your web browser, ensuring your privacy
                 and data security.</p>
             </div>
             <div>
               <h3 className="font-semibold text-base text-blue-700 mb-1">Q: How accurate is this age calculator?
               </h3>
-              <p>A: Our calculator is designed for high accuracy. It correctly accounts for leap years and the
+              <p className="text-sm sm:text-base">A: Our calculator is designed for high accuracy. It correctly accounts for leap years and the
                 precise number of days in each month to give you your exact age in years, months, and days.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-base text-blue-700 mb-1">Q: Can I calculate the age for someone
                 else?</h3>
-              <p>A: Yes, you can! Simply input their date of birth into the selector, and the calculator will
+              <p className="text-sm sm:text-base">A: Yes, you can! Simply input their date of birth into the selector, and the calculator will
                 provide their exact age based on today's date.</p>
             </div>
             <div>
               <h3 className="font-semibold text-base text-blue-700 mb-1">Q: What if I select a future date as my
                 date of birth?</h3>
-              <p>A: The calculator will display an error message if you select a future date, as a date of
+              <p className="text-sm sm:text-base">A: The calculator will display an error message if you select a future date, as a date of
                 birth cannot be in the future. Please ensure you select a date from the past or today's
                 date.</p>
             </div>

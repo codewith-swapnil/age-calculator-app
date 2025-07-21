@@ -1,33 +1,47 @@
-// components/MessageBox.js (assumed structure)
+// components/MessageBox.js
 import React from 'react';
 
 const MessageBox = ({ message, type, show }) => {
+  // IMPORTANT: Only render the div if 'show' is true.
+  // This prevents hydration mismatches for the 'style' attribute.
   if (!show) {
-    return null; // If not shown, it renders nothing
+    return null;
   }
 
-  // Determine background color based on message type
-  let backgroundColor = '';
+  let backgroundColorClass = '';
+  let textColorClass = '';
+  let borderColorClass = '';
+
   switch (type) {
     case 'success':
-      backgroundColor = 'bg-green-100 border-green-400 text-green-700';
+      backgroundColorClass = 'bg-green-100';
+      borderColorClass = 'border-green-400';
+      textColorClass = 'text-green-700';
       break;
     case 'error':
-      backgroundColor = 'bg-red-100 border-red-400 text-red-700';
+      backgroundColorClass = 'bg-red-100';
+      borderColorClass = 'border-red-400';
+      textColorClass = 'text-red-700';
       break;
     case 'info':
     default:
-      backgroundColor = 'bg-blue-100 border-blue-400 text-blue-700';
+      backgroundColorClass = 'bg-blue-100';
+      borderColorClass = 'border-blue-400';
+      textColorClass = 'text-blue-700';
       break;
   }
 
   return (
     <div
-      className={`fixed top-4 left-1/2 -translate-x-1/2 p-3 rounded-lg shadow-lg z-50 transition-all duration-300 ${backgroundColor}`}
-      // Problematic part might be here if 'style' is being set dynamically based on an initial null/undefined state
-      // that is different on server vs client.
-      // E.g., if you were doing inline style like style={{ display: show ? 'block' : 'none' }}
-      // and 'show' state initializes differently.
+      className={`
+        fixed top-4 left-1/2 -translate-x-1/2 p-3 rounded-lg shadow-lg z-50
+        transition-all duration-300 transform
+        ${backgroundColorClass} ${borderColorClass} ${textColorClass}
+        border-l-4 sm:w-auto w-[calc(100%-2rem)] // Added responsive width
+        text-sm sm:text-base // Adjusted text size for responsiveness
+      `}
+      role="alert" // For accessibility
+      // No inline 'style' attribute here to avoid hydration errors
     >
       {message}
     </div>
