@@ -142,7 +142,7 @@ export default function HomePage() {
         </h1>
 
         <p className="mb-6 text-gray-700 text-base text-center text-sm sm:text-base px-2"> {/* Added px-2 here */}
-          Welcome to our <strong>free online age calculator</strong>! Discover your exact age in years, months,
+          Welcome to our **free online age calculator**! Discover your exact age in years, months,
           and days with just a few clicks. This tool is perfect for calculating age for any purpose, from personal
           curiosity to official documentation. Simply select your date of birth below to get started. Our accurate
           and user-friendly calculator takes the guesswork out of determining age.
@@ -206,20 +206,20 @@ export default function HomePage() {
         <div className="mt-8 text-gray-700 text-sm px-2"> {/* Added px-2 here */}
           <h2 className="font-bold text-lg mb-3 text-blue-800">How Our Age Calculator Works</h2>
           <p className="mb-3 text-sm sm:text-base">
-            Our <strong>Age Calculator</strong> uses a straightforward yet precise method to
+            Our **Age Calculator** uses a straightforward yet precise method to
             determine your age. When you input your birth date, the calculator instantly computes the duration
-            from that specific date to the <strong>current date</strong> (July 21, 2025). It meticulously
+            from that specific date to the **current date** (July 21, 2025). It meticulously
             accounts for:
           </p>
           <ul className="list-disc pl-5 mb-3 space-y-1 text-sm sm:text-base">
-            <li><strong>Leap Years:</strong> Ensuring that an extra day in February is correctly factored in
+            <li>**Leap Years:** Ensuring that an extra day in February is correctly factored in
               every four years, preventing inaccuracies.</li>
-            <li><strong>Varying Month Lengths:</strong> Whether a month has 30 or 31 days (or 28/29 in
+            <li>**Varying Month Lengths:** Whether a month has 30 or 31 days (or 28/29 in
               February), the calculation adjusts precisely.</li>
-            <li><strong>Exact Day Count:</strong> You get your age broken down into full years, months, and even
+            <li>**Exact Day Count:** You get your age broken down into full years, months, and even
               the remaining days, providing a complete picture.</li>
           </ul>
-          <p className="text-sm sm:text-base">This process guarantees that you receive an <strong>accurate and reliable age calculation</strong>
+          <p className="text-sm sm:text-base">This process guarantees that you receive an **accurate and reliable age calculation**
             every time, making it dependable for both casual use and more formal requirements.</p>
         </div>
 
@@ -230,22 +230,22 @@ export default function HomePage() {
           <p className="mb-3 text-sm sm:text-base">Knowing your precise age in years, months, and days can be more useful than you might
             think! Beyond just curiosity, an exact age calculation is vital for numerous situations:</p>
           <ul className="list-disc pl-5 mb-3 space-y-1 text-sm sm:text-base">
-            <li><strong>Official Documentation:</strong> Many legal forms, applications (e.g., for school, jobs,
+            <li>**Official Documentation:** Many legal forms, applications (e.g., for school, jobs,
               or government services), and insurance policies require your exact age on a specific date.</li>
-            <li><strong>Retirement Planning:</strong> Calculating your age down to the day can help determine
+            <li>**Retirement Planning:** Calculating your age down to the day can help determine
               eligibility for benefits or specific retirement programs.</li>
-            <li><strong>Medical Records:</strong> Accurate age is crucial for dosage calculations, tracking
+            <li>**Medical Records:** Accurate age is crucial for dosage calculations, tracking
               developmental milestones in children, or understanding age-related health risks.</li>
-            <li><strong>Academic Admissions:</strong> Certain educational institutions or programs might have
+            <li>**Academic Admissions:** Certain educational institutions or programs might have
               strict age cut-offs, making precise age calculation essential.</li>
-            <li><strong>Personal Milestones:</strong> Want to know exactly how many days old you are? Or how
+            <li>**Personal Milestones:** Want to know exactly how many days old you are? Or how
               many days until your next big birthday? Our tool makes it easy to track these personal
               milestones.</li>
-            <li><strong>Legal Purposes:</strong> For contracts, wills, or other legal agreements, the exact age
+            <li>**Legal Purposes:** For contracts, wills, or other legal agreements, the exact age
               of individuals involved can be a critical detail.</li>
           </ul>
-          <p className="text-sm sm:text-base">Our age calculator simplifies these needs, providing you with <strong>quick and verified age
-            details</strong> whenever you need them.</p>
+          <p className="text-sm sm:text-base">Our age calculator simplifies these needs, providing you with **quick and verified age
+            details** whenever you need them.</p>
         </div>
 
         <hr className="my-8 border-gray-300" />
