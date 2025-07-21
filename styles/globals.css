@@ -1,133 +1,62 @@
 /* age-calculator-app/styles/globals.css */
+
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Custom fonts for better aesthetics */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800&display=swap');
 
+/* Apply global font and body background */
 body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right bottom, #e0f7fa, #b3e5fc);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    /* Ensure no default body margin causes scroll */
-    overflow-x: hidden;
-    /* Crucial: Prevent horizontal scrolling */
-    padding: 16px;
-    box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  /* Tailwind handles background color, min-height, margin via Layout.js */
+  /* Remove display: flex, justify-content, align-items from here. They conflict with Layout.js */
+  /* Remove padding from here; use padding on main/container elements instead */
+  
+  /* Crucial: Prevent horizontal scrolling for the entire body */
+  overflow-x: hidden; 
+  /* Ensure box-sizing is border-box for consistent sizing */
+  box-sizing: border-box; 
+  -webkit-font-smoothing: antialiased; /* Better font rendering on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Better font rendering on Firefox */
 }
 
-/* Responsive container */
-.container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    /* Ensures it's centered if wider than its content */
-}
+/* Remove .container styles - Layout.js handles this with Tailwind 'container mx-auto' */
 
-/* Style for the message box */
-.message-box {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ef4444;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 9999px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    font-weight: 600;
-    text-align: center;
-    min-width: 250px;
-    max-width: 90%;
-    /* Limit max-width to a percentage to prevent overflow on very small screens */
-    box-sizing: border-box;
-    /* Ensure padding doesn't add to max-width */
-}
+/* Remove .message-box styles - MessageBox.js handles this with Tailwind classes */
 
-.message-box.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
-}
+/* Remove explicit @media (max-width: 480px) for main, h1, #ageDisplay */
+/* These responsive styles should be handled directly in your JSX using Tailwind's responsive prefixes (e.g., text-base sm:text-lg) */
 
-/* Animation for the message box */
-@keyframes bounceIn {
-    0% {
-        transform: translateX(-50%) translateY(-100px);
-        opacity: 0;
-    }
 
-    60% {
-        transform: translateX(-50%) translateY(10px);
-        opacity: 1;
-    }
+/* --- Keep these specific overrides ONLY if absolutely necessary for external elements like AdSense --- */
 
-    80% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-/* Animation for the result section */
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.result-show {
-    animation: fadeInScale 0.5s ease-out forwards;
-}
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-    main {
-        padding: 1.5rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    #ageDisplay {
-        font-size: 1.75rem;
-    }
-}
-
-/* Ad Unit Specific Fixes */
+/* Ad Unit Specific Fixes (only if Netlify plugin doesn't handle them fully) */
+/* These are for AdSense iframes/containers that might not respect parent widths */
 .adsbygoogle {
-    max-width: 100% !important;
-    /* Ensure ads don't force overflow */
-    overflow: hidden;
-    /* Hide any overflowing ad content */
+    max-width: 100% !important; /* Ensure ads don't force overflow */
+    overflow: hidden; /* Hide any overflowing ad content */
+    display: block !important; /* Ensure it behaves as a block element */
+    margin: 0 auto; /* Center ads if they are narrower than their container */
 }
 
 /* This specifically targets the first ad unit which had a fixed width */
 ins[data-ad-slot="5092115319"] {
-    width: auto !important;
-    /* Let it take natural width */
-    min-width: 300px;
-    /* Minimum width for ad viability, adjust as needed */
-    max-width: 100% !important;
-    /* Ensure it never exceeds parent width */
+    width: auto !important; /* Let it take natural width */
+    min-width: 250px; /* Minimum width for ad viability on mobile, adjust as needed */
+    max-width: 100% !important; /* Ensure it never exceeds parent width */
+    display: block !important; /* Important for horizontal centering */
 }
 
+ins[data-ad-slot="2103167504"] { /* For the inline-block ad unit */
+    min-width: 250px; /* Adjust as needed */
+    max-width: 100% !important;
+    display: block !important; /* Change to block for consistent behavior */
+}
 
-/* Print styles */
+/* Print styles (these are fine as they are for specific print media) */
 @media print {
     body {
         background: white;
